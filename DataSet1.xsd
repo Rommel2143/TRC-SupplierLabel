@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="item_masterlist" msprop:Generator_TableClassName="item_masterlistDataTable" msprop:Generator_TableVarName="tableitem_masterlist" msprop:Generator_TablePropName="item_masterlist" msprop:Generator_RowDeletingName="item_masterlistRowDeleting" msprop:Generator_RowChangingName="item_masterlistRowChanging" msprop:Generator_RowEvHandlerName="item_masterlistRowChangeEventHandler" msprop:Generator_RowDeletedName="item_masterlistRowDeleted" msprop:Generator_UserTableName="item_masterlist" msprop:Generator_RowChangedName="item_masterlistRowChanged" msprop:Generator_RowEvArgName="item_masterlistRowChangeEvent" msprop:Generator_RowClassName="item_masterlistRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="partno" msprop:Generator_ColumnVarNameInTable="columnpartno" msprop:Generator_ColumnPropNameInRow="partno" msprop:Generator_ColumnPropNameInTable="partnoColumn" msprop:Generator_UserColumnName="partno" type="xs:string" minOccurs="0" />
+              <xs:element name="partname" msprop:Generator_ColumnVarNameInTable="columnpartname" msprop:Generator_ColumnPropNameInRow="partname" msprop:Generator_ColumnPropNameInTable="partnameColumn" msprop:Generator_UserColumnName="partname" type="xs:string" minOccurs="0" />
+              <xs:element name="model" msprop:Generator_ColumnVarNameInTable="columnmodel" msprop:Generator_ColumnPropNameInRow="model" msprop:Generator_ColumnPropNameInTable="modelColumn" msprop:Generator_UserColumnName="model" type="xs:string" minOccurs="0" />
+              <xs:element name="process" msprop:Generator_ColumnVarNameInTable="columnprocess" msprop:Generator_ColumnPropNameInRow="process" msprop:Generator_ColumnPropNameInTable="processColumn" msprop:Generator_UserColumnName="process" type="xs:string" minOccurs="0" />
+              <xs:element name="material" msprop:Generator_ColumnVarNameInTable="columnmaterial" msprop:Generator_ColumnPropNameInRow="material" msprop:Generator_ColumnPropNameInTable="materialColumn" msprop:Generator_UserColumnName="material" type="xs:string" minOccurs="0" />
+              <xs:element name="moldno" msprop:Generator_ColumnVarNameInTable="columnmoldno" msprop:Generator_ColumnPropNameInRow="moldno" msprop:Generator_ColumnPropNameInTable="moldnoColumn" msprop:Generator_UserColumnName="moldno" type="xs:string" minOccurs="0" />
+              <xs:element name="supplier" msprop:Generator_ColumnVarNameInTable="columnsupplier" msprop:Generator_ColumnPropNameInRow="supplier" msprop:Generator_ColumnPropNameInTable="supplierColumn" msprop:Generator_UserColumnName="supplier" type="xs:string" minOccurs="0" />
+              <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:int" minOccurs="0" />
+              <xs:element name="lot" msprop:Generator_ColumnVarNameInTable="columnlot" msprop:Generator_ColumnPropNameInRow="lot" msprop:Generator_ColumnPropNameInTable="lotColumn" msprop:Generator_UserColumnName="lot" type="xs:string" minOccurs="0" />
+              <xs:element name="box" msprop:Generator_ColumnVarNameInTable="columnbox" msprop:Generator_ColumnPropNameInRow="box" msprop:Generator_ColumnPropNameInTable="boxColumn" msprop:Generator_UserColumnName="box" type="xs:int" minOccurs="0" />
+              <xs:element name="proddate" msprop:Generator_ColumnVarNameInTable="columnproddate" msprop:Generator_ColumnPropNameInRow="proddate" msprop:Generator_ColumnPropNameInTable="proddateColumn" msprop:Generator_UserColumnName="proddate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="materialname" msprop:Generator_ColumnVarNameInTable="columnmaterialname" msprop:Generator_ColumnPropNameInRow="materialname" msprop:Generator_ColumnPropNameInTable="materialnameColumn" msprop:Generator_UserColumnName="materialname" type="xs:string" minOccurs="0" />
+              <xs:element name="serial" msprop:Generator_ColumnVarNameInTable="columnserial" msprop:Generator_ColumnPropNameInRow="serial" msprop:Generator_ColumnPropNameInTable="serialColumn" msprop:Generator_UserColumnName="serial" type="xs:string" minOccurs="0" />
+              <xs:element name="shift" msprop:Generator_ColumnVarNameInTable="columnshift" msprop:Generator_ColumnPropNameInRow="shift" msprop:Generator_ColumnPropNameInTable="shiftColumn" msprop:Generator_UserColumnName="shift" type="xs:string" minOccurs="0" />
+              <xs:element name="serial2" msprop:Generator_ColumnVarNameInTable="columnserial2" msprop:Generator_ColumnPropNameInRow="serial2" msprop:Generator_ColumnPropNameInTable="serial2Column" msprop:Generator_UserColumnName="serial2" type="xs:string" minOccurs="0" />
+              <xs:element name="qrcode" msprop:Generator_ColumnVarNameInTable="columnqrcode" msprop:Generator_ColumnPropNameInRow="qrcode" msprop:Generator_ColumnPropNameInTable="qrcodeColumn" msprop:Generator_UserColumnName="qrcode" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
