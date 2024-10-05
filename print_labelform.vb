@@ -97,14 +97,14 @@ Public Class print_labelform
 
             ' Get the quantity input from num_qty
             For i As Integer = 1 To num_count.Value
-                Dim qrcode As String = $"{partno}   {num_qty.Value}   {txt_materiallot.Text}    {moldno}     {i}       {Date.Now.ToString("dd/MM/yyyy")}{material}        {txt_serial.Text}     {cmb_shift.Text}              {txt_serial.Text}"
+                Dim qrcode As String = $"{partno}  {num_qty.Value}    {txt_lotnumber.Text}   {txt_materiallot.Text}    {moldno}     {i}       {Date.Now.ToString("dd/MM/yyyy")}{material}        {txt_serial.Text}     {cmb_shift.Text}        {txt_serial.Text}"
 
                 ' Generate the QR code and convert it to a byte array
                 Dim qrImage As Image = GenerateQRCode(qrcode)
                 Dim qrImageBytes As Byte() = ImageToByteArray(qrImage)
 
                 ' Add the data and QR code to the DataTable
-                dt_records.Rows.Add(partno, partname, model, process, txt_materiallot.Text, moldno, supplier, num_qty.Value, lotnumber, i, datedb, material, txt_serial.Text, cmb_shift.Text, txt_serial.Text, qrImageBytes)
+                dt_records.Rows.Add(partno, partname, model, process, txt_materiallot.Text, moldno, supplier, num_qty.Value, txt_lotnumber.Text, i, datedb, material, txt_serial.Text, cmb_shift.Text, txt_serial.Text, qrImageBytes)
 
                 ' Also add to the DataGridView for visual confirmation
                 datagrid1.Rows.Add(i, qrcode)
