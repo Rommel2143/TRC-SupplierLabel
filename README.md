@@ -1,2 +1,2 @@
 # TRC-SupplierLabel
- Label Printing
+TRC-SupplierLabel is a specialized system for generating and managing supplier labels, built using VB.NET. It automates the creation of supplier labels with barcode and QR code support, improving accuracy and efficiency in labeling operations. The system features a clean and modern interface built with Guna UI and supports easy integration with MySQL databases for storing label data.
