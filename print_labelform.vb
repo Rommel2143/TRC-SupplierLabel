@@ -11,8 +11,24 @@ Public Class print_labelform
     Dim supplier As String
     Dim dt_records As New DataTable
     Dim lotnumber As String
-
+    Dim qty As Integer
     Dim qrcode As String
+    Dim shift As String
+
+
+    'qr
+    Dim partnofix As String
+    Dim qtyfix As String
+    Dim lotnofix As String
+    Dim materiallotno As String
+    Dim moldnofix As String
+    Dim cavityfix As String
+    Dim proddatefix As String
+    Dim materialnamefix As String
+    Dim supcndnfix As String
+    Dim remafix As String
+    Dim serialfix As String
+
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -27,6 +43,7 @@ Public Class print_labelform
             material = dr.GetString("material")
             moldno = dr.GetInt32("moldno").ToString
             supplier = dr.GetString("supplier")
+            qty = dr.GetInt32("qty")
         End If
 
 
@@ -64,6 +81,8 @@ Public Class print_labelform
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
 
         Try
+
+
             ' Clear the DataGridView and DataTable rows
             datagrid1.Rows.Clear()
             ' Clear only rows, columns are already added
@@ -87,24 +106,22 @@ Public Class print_labelform
                 dt_records.Columns.Add("shift", GetType(String))
                 dt_records.Columns.Add("serial2", GetType(String))
                 dt_records.Columns.Add("qrcode", GetType(Byte()))
+                dt_records.Columns.Add("cavity", GetType(String))
             End If
             dt_records.Rows.Clear()
             ' Input validation
-            If String.IsNullOrEmpty(txt_materiallot.Text) OrElse String.IsNullOrEmpty(txt_serial.Text) Then
-                MessageBox.Show("Please ensure all required fields are filled.")
-                Exit Sub
-            End If
+
 
             ' Get the quantity input from num_qty
-            For i As Integer = 1 To num_count.Value
-                Dim qrcode As String = $"{partno}  {num_qty.Value}    {txt_lotnumber.Text}   {txt_materiallot.Text}    {moldno}     {i}       {Date.Now.ToString("dd/MM/yyyy")}{material}        {txt_serial.Text}     {cmb_shift.Text}        {txt_serial.Text}"
-
+            For i As Integer = 1 To (num_qty.Value / qty)
+                lotnumber = dtpicker1.Value.ToString("yyMMdd") & "-" & i & "-" & shift & "-" & txt_operator.Text
+                Dim qrcode As String = $"{partno.PadRight(15)}{qty.ToString.PadRight(5)}{lotnumber.PadRight(20)}{txt_materiallot.Text.PadRight(20)}{moldno.PadRight(20)}{num_cavity.Value.ToString.PadRight(20)}{Date.Now.ToString("MM/d/yyyy").PadRight(10)}{material.PadRight(40)}{"P86"}{"1".PadRight(10)}{txt_remarks.Text.PadRight(30)}{i.ToString.PadRight(10)}{lotnumber.PadRight(20)}"
                 ' Generate the QR code and convert it to a byte array
                 Dim qrImage As Image = GenerateQRCode(qrcode)
                 Dim qrImageBytes As Byte() = ImageToByteArray(qrImage)
 
                 ' Add the data and QR code to the DataTable
-                dt_records.Rows.Add(partno, partname, model, process, txt_materiallot.Text, moldno, supplier, num_qty.Value, txt_lotnumber.Text, i, datedb, material, txt_serial.Text, cmb_shift.Text, txt_serial.Text, qrImageBytes)
+                dt_records.Rows.Add(partno, partname, model, process, txt_materiallot.Text, moldno, supplier, num_qty.Value, lotnumber, i, datedb, material, "P861", cmb_shift.Text, i.ToString.PadRight(9), qrImageBytes, num_cavity.Value)
 
                 ' Also add to the DataGridView for visual confirmation
                 datagrid1.Rows.Add(i, qrcode)
@@ -139,5 +156,14 @@ Public Class print_labelform
 
     Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel1.Paint
 
+    End Sub
+
+    Private Sub cmb_shift_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_shift.SelectedIndexChanged
+        Select Case cmb_shift.Text
+            Case "Day"
+                shift = "A"
+            Case "Night"
+                shift = "B"
+        End Select
     End Sub
 End Class

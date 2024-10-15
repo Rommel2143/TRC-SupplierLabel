@@ -315,6 +315,10 @@ Partial Public Class DataSet1
         
         Private columnqrcode As Global.System.Data.DataColumn
         
+        Private columncavity As Global.System.Data.DataColumn
+        
+        Private columnremarks As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -479,6 +483,22 @@ Partial Public Class DataSet1
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property cavityColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncavity
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property remarksColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnremarks
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -531,9 +551,11 @@ Partial Public Class DataSet1
                     ByVal serial As String,  _
                     ByVal shift As String,  _
                     ByVal serial2 As String,  _
-                    ByVal qrcode() As Byte) As item_masterlistRow
+                    ByVal qrcode() As Byte,  _
+                    ByVal cavity As Integer,  _
+                    ByVal remarks As String) As item_masterlistRow
             Dim rowitem_masterlistRow As item_masterlistRow = CType(Me.NewRow,item_masterlistRow)
-            Dim columnValuesArray() As Object = New Object() {partno, partname, model, process, material, moldno, supplier, qty, lot, box, proddate, materialname, serial, shift, serial2, qrcode}
+            Dim columnValuesArray() As Object = New Object() {partno, partname, model, process, material, moldno, supplier, qty, lot, box, proddate, materialname, serial, shift, serial2, qrcode, cavity, remarks}
             rowitem_masterlistRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowitem_masterlistRow)
             Return rowitem_masterlistRow
@@ -572,6 +594,8 @@ Partial Public Class DataSet1
             Me.columnshift = MyBase.Columns("shift")
             Me.columnserial2 = MyBase.Columns("serial2")
             Me.columnqrcode = MyBase.Columns("qrcode")
+            Me.columncavity = MyBase.Columns("cavity")
+            Me.columnremarks = MyBase.Columns("remarks")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -609,6 +633,10 @@ Partial Public Class DataSet1
             MyBase.Columns.Add(Me.columnserial2)
             Me.columnqrcode = New Global.System.Data.DataColumn("qrcode", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnqrcode)
+            Me.columncavity = New Global.System.Data.DataColumn("cavity", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncavity)
+            Me.columnremarks = New Global.System.Data.DataColumn("remarks", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnremarks)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -995,6 +1023,36 @@ Partial Public Class DataSet1
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property cavity() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableitem_masterlist.cavityColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'cavity' in table 'item_masterlist' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableitem_masterlist.cavityColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property remarks() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableitem_masterlist.remarksColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'remarks' in table 'item_masterlist' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableitem_masterlist.remarksColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IspartnoNull() As Boolean
             Return Me.IsNull(Me.tableitem_masterlist.partnoColumn)
         End Function
@@ -1183,6 +1241,30 @@ Partial Public Class DataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetqrcodeNull()
             Me(Me.tableitem_masterlist.qrcodeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IscavityNull() As Boolean
+            Return Me.IsNull(Me.tableitem_masterlist.cavityColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetcavityNull()
+            Me(Me.tableitem_masterlist.cavityColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsremarksNull() As Boolean
+            Return Me.IsNull(Me.tableitem_masterlist.remarksColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetremarksNull()
+            Me(Me.tableitem_masterlist.remarksColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

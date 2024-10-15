@@ -33,31 +33,34 @@ Partial Class print_labelform
         Me.boxcol = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txt_operator = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.dtpicker1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lbl_mold = New System.Windows.Forms.Label()
         Me.lbl_partcode = New System.Windows.Forms.Label()
         Me.lbl_partname = New System.Windows.Forms.Label()
-        Me.num_count = New Guna.UI2.WinForms.Guna2NumericUpDown()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.cmb_shift = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txt_serial = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_materiallot = New Guna.UI2.WinForms.Guna2TextBox()
         Me.num_qty = New Guna.UI2.WinForms.Guna2NumericUpDown()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.txt_lotnumber = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txt_remarks = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.num_cavity = New Guna.UI2.WinForms.Guna2NumericUpDown()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Guna2TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.datagrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
-        CType(Me.num_count, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.num_qty, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
+        CType(Me.num_cavity, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CrystalReportViewer1
@@ -143,7 +146,7 @@ Partial Class print_labelform
         Me.datagrid1.DefaultCellStyle = DataGridViewCellStyle3
         Me.datagrid1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.datagrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.datagrid1.Location = New System.Drawing.Point(3, 187)
+        Me.datagrid1.Location = New System.Drawing.Point(3, 284)
         Me.datagrid1.Name = "datagrid1"
         Me.datagrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -155,7 +158,7 @@ Partial Class print_labelform
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.datagrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.datagrid1.RowHeadersVisible = False
-        Me.datagrid1.Size = New System.Drawing.Size(1143, 494)
+        Me.datagrid1.Size = New System.Drawing.Size(1143, 397)
         Me.datagrid1.TabIndex = 4
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.datagrid1.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -191,15 +194,18 @@ Partial Class print_labelform
         '
         'Guna2Panel1
         '
-        Me.Guna2Panel1.Controls.Add(Me.txt_lotnumber)
+        Me.Guna2Panel1.Controls.Add(Me.Label7)
+        Me.Guna2Panel1.Controls.Add(Me.num_cavity)
+        Me.Guna2Panel1.Controls.Add(Me.Label6)
+        Me.Guna2Panel1.Controls.Add(Me.txt_remarks)
+        Me.Guna2Panel1.Controls.Add(Me.Label4)
+        Me.Guna2Panel1.Controls.Add(Me.txt_operator)
+        Me.Guna2Panel1.Controls.Add(Me.Label3)
+        Me.Guna2Panel1.Controls.Add(Me.dtpicker1)
         Me.Guna2Panel1.Controls.Add(Me.Guna2Button1)
         Me.Guna2Panel1.Controls.Add(Me.Guna2Panel2)
-        Me.Guna2Panel1.Controls.Add(Me.num_count)
-        Me.Guna2Panel1.Controls.Add(Me.Label6)
         Me.Guna2Panel1.Controls.Add(Me.Label5)
         Me.Guna2Panel1.Controls.Add(Me.cmb_shift)
-        Me.Guna2Panel1.Controls.Add(Me.Label4)
-        Me.Guna2Panel1.Controls.Add(Me.txt_serial)
         Me.Guna2Panel1.Controls.Add(Me.Label2)
         Me.Guna2Panel1.Controls.Add(Me.Label1)
         Me.Guna2Panel1.Controls.Add(Me.txt_materiallot)
@@ -207,8 +213,65 @@ Partial Class print_labelform
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel1.Location = New System.Drawing.Point(3, 3)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(1143, 184)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(1143, 281)
         Me.Guna2Panel1.TabIndex = 3
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label4.Location = New System.Drawing.Point(844, 18)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(91, 15)
+        Me.Label4.TabIndex = 20
+        Me.Label4.Text = "Operator Initials"
+        '
+        'txt_operator
+        '
+        Me.txt_operator.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_operator.DefaultText = ""
+        Me.txt_operator.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_operator.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_operator.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_operator.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_operator.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_operator.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_operator.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_operator.Location = New System.Drawing.Point(847, 36)
+        Me.txt_operator.MaxLength = 4
+        Me.txt_operator.Name = "txt_operator"
+        Me.txt_operator.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_operator.PlaceholderText = ""
+        Me.txt_operator.SelectedText = ""
+        Me.txt_operator.Size = New System.Drawing.Size(88, 36)
+        Me.txt_operator.TabIndex = 19
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label3.Location = New System.Drawing.Point(357, 18)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(58, 15)
+        Me.Label3.TabIndex = 18
+        Me.Label3.Text = "Prod date"
+        '
+        'dtpicker1
+        '
+        Me.dtpicker1.Checked = True
+        Me.dtpicker1.FillColor = System.Drawing.Color.DarkSlateBlue
+        Me.dtpicker1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.dtpicker1.ForeColor = System.Drawing.Color.White
+        Me.dtpicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.dtpicker1.Location = New System.Drawing.Point(360, 36)
+        Me.dtpicker1.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.dtpicker1.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.dtpicker1.Name = "dtpicker1"
+        Me.dtpicker1.Size = New System.Drawing.Size(200, 36)
+        Me.dtpicker1.TabIndex = 17
+        Me.dtpicker1.Value = New Date(2024, 10, 7, 13, 47, 6, 898)
         '
         'Guna2Button1
         '
@@ -219,11 +282,11 @@ Partial Class print_labelform
         Me.Guna2Button1.FillColor = System.Drawing.Color.DarkSlateBlue
         Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(678, 87)
+        Me.Guna2Button1.Location = New System.Drawing.Point(963, 55)
         Me.Guna2Button1.Name = "Guna2Button1"
         Me.Guna2Button1.Size = New System.Drawing.Size(125, 54)
         Me.Guna2Button1.TabIndex = 16
-        Me.Guna2Button1.Text = "Create"
+        Me.Guna2Button1.Text = "Generate"
         '
         'Guna2Panel2
         '
@@ -235,70 +298,48 @@ Partial Class print_labelform
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.ShadowDecoration.Color = System.Drawing.Color.Silver
         Me.Guna2Panel2.ShadowDecoration.Enabled = True
-        Me.Guna2Panel2.Size = New System.Drawing.Size(233, 83)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(305, 127)
         Me.Guna2Panel2.TabIndex = 15
         '
         'lbl_mold
         '
         Me.lbl_mold.AutoSize = True
-        Me.lbl_mold.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_mold.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_mold.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lbl_mold.Location = New System.Drawing.Point(17, 53)
+        Me.lbl_mold.Location = New System.Drawing.Point(16, 76)
         Me.lbl_mold.Name = "lbl_mold"
-        Me.lbl_mold.Size = New System.Drawing.Size(35, 15)
+        Me.lbl_mold.Size = New System.Drawing.Size(46, 21)
         Me.lbl_mold.TabIndex = 18
         Me.lbl_mold.Text = "mold"
         '
         'lbl_partcode
         '
         Me.lbl_partcode.AutoSize = True
-        Me.lbl_partcode.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_partcode.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_partcode.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lbl_partcode.Location = New System.Drawing.Point(17, 38)
+        Me.lbl_partcode.Location = New System.Drawing.Point(16, 52)
         Me.lbl_partcode.Name = "lbl_partcode"
-        Me.lbl_partcode.Size = New System.Drawing.Size(54, 15)
+        Me.lbl_partcode.Size = New System.Drawing.Size(70, 21)
         Me.lbl_partcode.TabIndex = 17
         Me.lbl_partcode.Text = "Partcode"
         '
         'lbl_partname
         '
         Me.lbl_partname.AutoSize = True
-        Me.lbl_partname.Font = New System.Drawing.Font("Segoe UI Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_partname.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_partname.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.lbl_partname.Location = New System.Drawing.Point(16, 14)
+        Me.lbl_partname.Location = New System.Drawing.Point(15, 28)
         Me.lbl_partname.Name = "lbl_partname"
-        Me.lbl_partname.Size = New System.Drawing.Size(79, 21)
+        Me.lbl_partname.Size = New System.Drawing.Size(99, 25)
         Me.lbl_partname.TabIndex = 16
         Me.lbl_partname.Text = "Partname"
-        '
-        'num_count
-        '
-        Me.num_count.BackColor = System.Drawing.Color.Transparent
-        Me.num_count.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.num_count.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.num_count.Location = New System.Drawing.Point(286, 105)
-        Me.num_count.Name = "num_count"
-        Me.num_count.Size = New System.Drawing.Size(125, 36)
-        Me.num_count.TabIndex = 14
-        Me.num_count.UpDownButtonFillColor = System.Drawing.Color.DarkSlateBlue
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label6.Location = New System.Drawing.Point(283, 87)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(69, 15)
-        Me.Label6.TabIndex = 13
-        Me.Label6.Text = "Label count"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label5.Location = New System.Drawing.Point(675, 21)
+        Me.Label5.Location = New System.Drawing.Point(357, 94)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(31, 15)
         Me.Label5.TabIndex = 12
@@ -315,47 +356,17 @@ Partial Class print_labelform
         Me.cmb_shift.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmb_shift.ItemHeight = 30
         Me.cmb_shift.Items.AddRange(New Object() {"Day", "Night"})
-        Me.cmb_shift.Location = New System.Drawing.Point(678, 37)
+        Me.cmb_shift.Location = New System.Drawing.Point(360, 110)
         Me.cmb_shift.Name = "cmb_shift"
         Me.cmb_shift.Size = New System.Drawing.Size(125, 36)
         Me.cmb_shift.TabIndex = 11
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label4.Location = New System.Drawing.Point(452, 87)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(34, 15)
-        Me.Label4.TabIndex = 9
-        Me.Label4.Text = "serial"
-        '
-        'txt_serial
-        '
-        Me.txt_serial.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txt_serial.DefaultText = ""
-        Me.txt_serial.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txt_serial.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txt_serial.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_serial.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_serial.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_serial.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txt_serial.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_serial.Location = New System.Drawing.Point(455, 105)
-        Me.txt_serial.Name = "txt_serial"
-        Me.txt_serial.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_serial.PlaceholderText = ""
-        Me.txt_serial.SelectedText = ""
-        Me.txt_serial.Size = New System.Drawing.Size(200, 36)
-        Me.txt_serial.TabIndex = 8
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label2.Location = New System.Drawing.Point(452, 19)
+        Me.Label2.Location = New System.Drawing.Point(596, 18)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(70, 15)
         Me.Label2.TabIndex = 5
@@ -366,11 +377,11 @@ Partial Class print_labelform
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.Label1.Location = New System.Drawing.Point(283, 21)
+        Me.Label1.Location = New System.Drawing.Point(596, 94)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(26, 15)
+        Me.Label1.Size = New System.Drawing.Size(81, 15)
         Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Qty"
+        Me.Label1.Text = "Total Quantity"
         '
         'txt_materiallot
         '
@@ -383,7 +394,8 @@ Partial Class print_labelform
         Me.txt_materiallot.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_materiallot.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.txt_materiallot.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_materiallot.Location = New System.Drawing.Point(455, 37)
+        Me.txt_materiallot.Location = New System.Drawing.Point(599, 36)
+        Me.txt_materiallot.MaxLength = 19
         Me.txt_materiallot.Name = "txt_materiallot"
         Me.txt_materiallot.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_materiallot.PlaceholderText = ""
@@ -396,9 +408,10 @@ Partial Class print_labelform
         Me.num_qty.BackColor = System.Drawing.Color.Transparent
         Me.num_qty.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.num_qty.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.num_qty.Location = New System.Drawing.Point(286, 37)
+        Me.num_qty.Location = New System.Drawing.Point(599, 110)
+        Me.num_qty.Maximum = New Decimal(New Integer() {999, 0, 0, 0})
         Me.num_qty.Name = "num_qty"
-        Me.num_qty.Size = New System.Drawing.Size(125, 36)
+        Me.num_qty.Size = New System.Drawing.Size(200, 36)
         Me.num_qty.TabIndex = 2
         Me.num_qty.UpDownButtonFillColor = System.Drawing.Color.DarkSlateBlue
         '
@@ -413,24 +426,59 @@ Partial Class print_labelform
         Me.TabPage2.Text = "Preview"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'txt_lotnumber
+        'Label6
         '
-        Me.txt_lotnumber.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txt_lotnumber.DefaultText = ""
-        Me.txt_lotnumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txt_lotnumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txt_lotnumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_lotnumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_lotnumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_lotnumber.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txt_lotnumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_lotnumber.Location = New System.Drawing.Point(14, 108)
-        Me.txt_lotnumber.Name = "txt_lotnumber"
-        Me.txt_lotnumber.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_lotnumber.PlaceholderText = "Lotnumber..."
-        Me.txt_lotnumber.SelectedText = ""
-        Me.txt_lotnumber.Size = New System.Drawing.Size(233, 36)
-        Me.txt_lotnumber.TabIndex = 17
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label6.Location = New System.Drawing.Point(357, 160)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(52, 15)
+        Me.Label6.TabIndex = 22
+        Me.Label6.Text = "Remarks"
+        '
+        'txt_remarks
+        '
+        Me.txt_remarks.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_remarks.DefaultText = ""
+        Me.txt_remarks.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_remarks.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_remarks.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_remarks.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_remarks.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_remarks.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.txt_remarks.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_remarks.Location = New System.Drawing.Point(360, 178)
+        Me.txt_remarks.MaxLength = 29
+        Me.txt_remarks.Name = "txt_remarks"
+        Me.txt_remarks.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_remarks.PlaceholderText = ""
+        Me.txt_remarks.SelectedText = ""
+        Me.txt_remarks.Size = New System.Drawing.Size(398, 36)
+        Me.txt_remarks.TabIndex = 21
+        '
+        'num_cavity
+        '
+        Me.num_cavity.BackColor = System.Drawing.Color.Transparent
+        Me.num_cavity.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.num_cavity.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.num_cavity.Location = New System.Drawing.Point(847, 110)
+        Me.num_cavity.Maximum = New Decimal(New Integer() {999, 0, 0, 0})
+        Me.num_cavity.Name = "num_cavity"
+        Me.num_cavity.Size = New System.Drawing.Size(88, 36)
+        Me.num_cavity.TabIndex = 25
+        Me.num_cavity.UpDownButtonFillColor = System.Drawing.Color.DarkSlateBlue
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Label7.Location = New System.Drawing.Point(844, 92)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(40, 15)
+        Me.Label7.TabIndex = 26
+        Me.Label7.Text = "Cavity"
         '
         'print_labelform
         '
@@ -449,9 +497,9 @@ Partial Class print_labelform
         Me.Guna2Panel1.PerformLayout()
         Me.Guna2Panel2.ResumeLayout(False)
         Me.Guna2Panel2.PerformLayout()
-        CType(Me.num_count, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.num_qty, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
+        CType(Me.num_cavity, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -461,12 +509,8 @@ Partial Class print_labelform
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents datagrid1 As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents num_count As Guna.UI2.WinForms.Guna2NumericUpDown
-    Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents cmb_shift As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents txt_serial As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents txt_materiallot As Guna.UI2.WinForms.Guna2TextBox
@@ -479,5 +523,12 @@ Partial Class print_labelform
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents boxcol As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
-    Friend WithEvents txt_lotnumber As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents dtpicker1 As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txt_operator As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txt_remarks As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents num_cavity As Guna.UI2.WinForms.Guna2NumericUpDown
 End Class
