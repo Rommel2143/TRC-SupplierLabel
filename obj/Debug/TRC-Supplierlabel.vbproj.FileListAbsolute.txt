@@ -140,3 +140,7 @@ D:\GIT\TRC-Supplierlabel\TRC-SupplierLabel\obj\Debug\TRC-Supplierlabel.exe
 D:\GIT\TRC-Supplierlabel\TRC-SupplierLabel\obj\Debug\TRC-Supplierlabel.xml
 D:\GIT\TRC-Supplierlabel\TRC-SupplierLabel\obj\Debug\TRC-Supplierlabel.pdb
 D:\GIT\TRC-Supplierlabel\TRC-SupplierLabel\obj\Debug\TRC-Supplierlabel.vbproj.AssemblyReference.cache
+D:\GIT\TRC-SupplierLabel\bin\Debug\TRC-Supplierlabel.exe.manifest
+D:\GIT\TRC-SupplierLabel\bin\Debug\TRC-Supplierlabel.application
+D:\GIT\TRC-SupplierLabel\obj\Debug\TRC-Supplierlabel.exe.manifest
+D:\GIT\TRC-SupplierLabel\obj\Debug\TRC-Supplierlabel.application
